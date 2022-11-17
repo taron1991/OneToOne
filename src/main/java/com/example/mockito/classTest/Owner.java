@@ -23,11 +23,8 @@ class Owner {
     @Column
     private String name;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
-    private List<Animal> animal = new ArrayList<>();
+    @OneToOne(mappedBy = "owner", cascade = CascadeType.ALL)
+    private Animal animal;
 
-    public void addAnimalToOwner(Animal animal) {
-        this.animal.add(animal);
-        animal.setOwner(this);
-    }
+
 }

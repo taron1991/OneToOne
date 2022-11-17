@@ -23,16 +23,19 @@ public class MainClass {
             Owner owner = new Owner();
             owner.setName("patrick");
 
+            Owner owner2 = new Owner();
+            owner2.setName("alex");
+
             Animal animal = new Animal();
             animal.setName("sharik");
+            animal.setOwner(owner);
 
             Animal animal2 = new Animal();
-            animal2.setName("moska");
+            animal2.setName("mosya");
+            animal2.setOwner(owner2);
 
-            owner.addAnimalToOwner(animal);
-            owner.addAnimalToOwner(animal2);
-
-            currentSession.save(owner);
+            currentSession.save(animal2);
+            currentSession.save(animal);
 
             currentSession.getTransaction().commit();
 

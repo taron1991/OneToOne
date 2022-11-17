@@ -20,7 +20,7 @@ class Animal {
     @Column
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "animal_id")
     private Owner owner;
 
